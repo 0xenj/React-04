@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Table(props) {
-  const { entries } = props;
+  const { entries, handleDelete } = props;
   return (
     <table className="table">
       <thead>
@@ -18,7 +18,7 @@ function Table(props) {
             <td>{entry.name}</td>
             <td>{entry.desc}</td>
             <td>{entry.price}</td>
-            <button type="button" class="btn-close" aria-label="Close"></button>
+            <button class="btn-close" aria-label="Close" onClick={() => handleDelete(entry.id)}>DELETE</button>
           </tr>
         ))}
       </tbody>
